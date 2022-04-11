@@ -4,6 +4,6 @@ namespace Calculation.API.Services
 {
     public interface ICalculation
     {
-        BigInteger Add(BigInteger value1, BigInteger value2);
+        public string Addition(string value1, string value2);
     }
 }
