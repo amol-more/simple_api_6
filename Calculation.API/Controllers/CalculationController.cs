@@ -26,15 +26,9 @@ namespace Calculation.API.Controllers
                 {
                     return BadRequest();
                 }
-                if (BigInteger.TryParse(value.Value1, out BigInteger convertedInt1) && BigInteger.TryParse(value.Value2, out BigInteger convertedInt2))
-                {
-                    var result = _calculation.Add(convertedInt1, convertedInt2);
-                    return Ok(result.ToString());
-                }
-                else
-                {
-                    return BadRequest();
-                }
+                var result = _calculation.Addition(value.Value1.Trim(), value.Value2.Trim());
+                return Ok(result.ToString());
+
             }
             catch (Exception ex)
             {
