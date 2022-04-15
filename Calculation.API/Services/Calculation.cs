@@ -17,6 +17,10 @@ namespace Calculation.API.Services
             }
             for (int i = value1.Length - 1; i >= 0; i--)
             {
+                if(!char.IsNumber(value1[i]) || !char.IsNumber(value2[i]))
+                {
+                    return string.Empty;
+                }
                 var singleDigitSum = (value1[i]-'0') + (value2[i] - '0') + carry;
                 if (singleDigitSum > 9)
                 {
