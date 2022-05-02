@@ -1,11 +1,10 @@
-﻿using System.Numerics;
-using System.Text;
+﻿using System.Text;
 
 namespace Calculation.API.Services
 {
     public class Calculation : ICalculation
     {
-        public string Addition(string value1, string value2)
+        public virtual string Addition(string value1, string value2)
         {
             var sum = new StringBuilder();
             int carry = 0;

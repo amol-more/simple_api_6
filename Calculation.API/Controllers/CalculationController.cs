@@ -1,7 +1,6 @@
 ﻿using Calculation.API.Model;
 using Calculation.API.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Numerics;
 
 namespace Calculation.API.Controllers
 {
@@ -35,12 +34,11 @@ namespace Calculation.API.Controllers
             {
                 if (String.IsNullOrEmpty(value.Value1) || String.IsNullOrEmpty(value.Value2))
                 {
-                    _logger.LogError("Vlaues missing");
+                    _logger.LogError("Value missing.");
                     return BadRequest();
                 }
                 var result = _calculation.Addition(value.Value1.Trim(), value.Value2.Trim());
                 return Ok(result);
-
             }
             catch (Exception ex)
             {
