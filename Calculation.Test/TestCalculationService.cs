@@ -1,5 +1,4 @@
 using Xunit;
-using Calculation.API;
 
 namespace Calculation.Test
 {
@@ -32,7 +31,5 @@ namespace Calculation.Test
 
             Assert.True(string.IsNullOrEmpty(result));
         }
-
-        
     }
 }

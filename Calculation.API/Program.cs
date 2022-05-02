@@ -1,5 +1,4 @@
 using Serilog;
-using Serilog.Sinks.File;
 using System.Reflection;
 
 //Log.Logger = new LoggerConfiguration().WriteTo.File("../log.txt").CreateBootstrapLogger(); ; ;
@@ -35,11 +34,14 @@ builder.Host.UseSerilog((ctx, lc) => lc
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.UseCors();
 app.UseHttpsRedirection();
 
